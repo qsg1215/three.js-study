@@ -1,9 +1,13 @@
 
 import React, { Component } from 'react'
 import * as THREE from 'three'
-export default class App extends Component {
+
+import './index.less'
+import './test.css'
+import '../../src/styles/global.less'
+export default class THREEDemo1 extends Component {
     render() {
-        return <div style={{ background: 'red' }}>Hello,APP</div>;
+        return <div  >Hello,APP</div>;
     }
     componentDidMount() {
         let rootDom = document.querySelector('#root')

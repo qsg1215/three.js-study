@@ -1,13 +1,12 @@
-
-
 import ReactDOM from 'react-dom';
-
-import App from './views/App.jsx'
+import THREEDemo1 from './Views/THREEDemo1.jsx'
 import React from 'react'
-import './page1'
+
+import './styles/global.less'
+
+//这里是备注信息 sdfsd
 
 
-ReactDOM.render(
-    <App></App>,
-    document.getElementById('root')
-);
+
+ReactDOM.render(<div><THREEDemo1></THREEDemo1> </div>, document.getElementById('root'));
+
