@@ -8,6 +8,7 @@ export default class THREEDemo1 extends Component {
     return (
       <div>
         <Line />
+        <div>测试</div>
       </div>
     );
   }
