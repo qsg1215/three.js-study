@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as THREE from 'three';
 
 import './line.less';
@@ -22,7 +22,7 @@ export default class Line extends Component {
   componentDidMount() {
     //dom
     let rootDom = document.querySelector('#canvas-frame');
-    let {clientWidth, clientHeight} = rootDom;
+    let { clientWidth, clientHeight } = rootDom;
 
     //场景
     var scene = new THREE.Scene();
