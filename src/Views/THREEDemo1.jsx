@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import * as THREE from 'three';
 
 import Line from './Three/line.jsx';
