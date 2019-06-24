@@ -1,11 +1,10 @@
 body {
     margin: 0px;
-    background: red;
     height: 300px;
 }
 
 
 #root {
-    background: #ccc;
+
     display: flex;
 }

@@ -101,12 +101,14 @@ module.exports = {
             chunkFilename: devMode ? 'styles/[id].css' : 'styles/[id].[contenthash].css',
         }),
         //压缩css
-        new OptimizeCSSAssetsPlugin({
+        devMode ? function () { } : new OptimizeCSSAssetsPlugin({
             assetNameRegExp: /\.css$/g,
             cssProcessor: require('cssnano'),
             cssProcessorOptions: { discardComments: { removeAll: true } },
             canPrint: true
         }),
+
+        //压缩js
         devMode ? function () { } : new UglifyJsPlugin({
             sourceMap: true,
             cache: true,
@@ -117,12 +119,6 @@ module.exports = {
                 }
             },
         })
-
-
-
-        //压缩js
-
-
     ],
     module: { //要打包的第三方模块
         rules: [
