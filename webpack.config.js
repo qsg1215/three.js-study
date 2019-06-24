@@ -53,12 +53,12 @@ module.exports = {
                     // 设置优先级，防止和自定义的公共代码提取时被覆盖，不进行打包
                     priority: 10
                 },
-                styles: {
-                    name: 'style',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true
-                }
+                // styles: {
+                //     name: 'style',
+                //     test: /\.css$/,
+                //     chunks: 'all',
+                //     enforce: true
+                // }
             },
             chunks: 'all',
             minSize: 30000,
@@ -97,8 +97,8 @@ module.exports = {
 
         //提取css
         new MiniCssExtractPlugin({
-            filename: devMode ? 'styles/[name].css ' : 'styles/[name].cssstyles/[name].[contenthash].css',
-            chunkFilename: devMode ? 'styles/[id].css' : 'styles/[id].[contenthash].css',
+            filename: 'styles/[name].[contenthash].css',
+            chunkFilename: 'styles/[id].[contenthash].css',
         }),
         //压缩css
         devMode ? function () { } : new OptimizeCSSAssetsPlugin({
@@ -126,25 +126,27 @@ module.exports = {
 
             {
                 test: /\.(le|c)ss$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader, options: {
-                        publicPath: '../',
-                        hmr: process.env.NODE_ENV === 'development',
-                    }
-                },
+                use: [
+                    {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                            hmr: process.env.NODE_ENV === 'development',
+                        },
+                    },
                     'css-loader',
-                {
-                    loader: "postcss-loader",
-                    options: {
-                        ident: 'postcss',
-                        plugins: [
-                            require('autoprefixer')({
-                                'overrideBrowserslist.': ['> 1%', 'last 2 versions']
-                            }),
-                        ]
-                    }
-                },
-                    'less-loader',]
+                    {
+                        loader: "postcss-loader",
+                        options: {
+                            ident: 'postcss',
+                            plugins: [
+                                require('autoprefixer')({
+                                    'overrideBrowserslist.': ['> 1%', 'last 2 versions']
+                                }),
+                            ]
+                        }
+                    },
+                    'less-loader',
+                ]
             },
 
             {

@@ -3,7 +3,7 @@ import React, {
 } from 'react'
 import * as THREE from 'three'
 
-import './line.css'
+import './line.less'
 
 export default class Line extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ export default class Line extends Component {
     }
 
     render() {
-        return <div id="canvas-frame"  ></div>;
+        return <div id = "canvas-frame" > < /div>;
     }
 
 
@@ -26,7 +26,8 @@ export default class Line extends Component {
         //dom
         let rootDom = document.querySelector('#canvas-frame')
         let {
-            clientWidth, clientHeight
+            clientWidth,
+            clientHeight
         } = rootDom
 
 
@@ -51,7 +52,9 @@ export default class Line extends Component {
 
 
 
-        var material = new THREE.LineBasicMaterial({ color: 0x0000ff });
+        var material = new THREE.LineBasicMaterial({
+            color: 0x0000ff
+        });
 
         var geometry = new THREE.Geometry();
         geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
