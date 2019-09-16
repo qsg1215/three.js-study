@@ -1,13 +1,12 @@
 import React, { Component } from 'react';
-import * as THREE from 'three';
+import Test from './Test/index.jsx'
 
-import Line from './Three/line.jsx'
 export default class THREEDemo1 extends Component {
   render() {
     return (
       <div>
-        <Line></Line>
         <div>测试</div>
+        <Test></Test>
       </div>
     );
   }
