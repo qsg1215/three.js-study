@@ -13,7 +13,6 @@ export default class THREEDemo1 extends Component {
   }
 
   callbacks(val) {
-    console.log('=====> ', val)
     if (val.data && val.data.type && val.data.type === 'answerResult') {
       let data = JSON.parse(val.data.data)
       this.setState({
