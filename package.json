@@ -50,7 +50,7 @@
     "lodash": "^4.17.11",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "three": "^0.105.2",
+    "three": "^0.125.0",
     "three-collada-loader": "0.0.1",
     "three-gltf-loader": "^1.105.0"
   },
